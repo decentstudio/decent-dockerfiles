@@ -10,6 +10,6 @@ RUN apk update && apk add vim tmux
 
 VOLUME ["/code/"]
 
-WORKDIR ["/code"]
+WORKDIR /code
 
-ENTRYPOINT ["./bin/sh"]
+ENTRYPOINT ["sh"]

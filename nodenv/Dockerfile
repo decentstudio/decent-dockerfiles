@@ -8,6 +8,10 @@ LABEL maintainer="cjbarre@gmail.com" \
 
 RUN apk update && apk add vim tmux
 
+WORKDIR $HOME/root
+
+COPY .vimrc .vimrc
+
 VOLUME ["/code/"]
 
 WORKDIR /code

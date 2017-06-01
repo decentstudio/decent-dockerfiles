@@ -1,0 +1,23 @@
+version: "3"
+services:
+  decent-slack-receiver:
+    image: "decent-event-receiver:1.0"
+    depends_on:
+      - rabbitmq
+    env_file:
+      - .env
+    build: .
+    ports:
+      - "8080:80"
+  decent-news-distributor:
+    image: "decent-news-distributor:1.0"
+    depends_on:
+      - rabbitmq
+    env_file:
+      - .env
+    ports:
+      - "8081:80"
+  rabbitmq:
+    image: "rabbitmq:management-alpine"
+    ports:
+      - "15672:15672"

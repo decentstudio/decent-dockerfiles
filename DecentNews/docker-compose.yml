@@ -1,7 +1,7 @@
 version: "3"
 services:
   decent-slack-receiver:
-    image: "decent-event-receiver:1.0"
+    image: "decent-slack-receiver:1.0"
     depends_on:
       - rabbitmq
     env_file:

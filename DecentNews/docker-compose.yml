@@ -6,7 +6,6 @@ services:
       - rabbitmq
     env_file:
       - .env
-    build: .
     ports:
       - "8080:80"
   decent-news-distributor:

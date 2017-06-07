@@ -1,7 +1,7 @@
 version: "3"
 services:
   decent-slack-receiver:
-    image: "decent-slack-receiver:1.0"
+    image: "decentstudio/decent-slack-receiver"
     depends_on:
       - rabbitmq
     env_file:
@@ -9,7 +9,7 @@ services:
     ports:
       - "8080:80"
   decent-news-distributor:
-    image: "decent-news-distributor:1.0"
+    image: "decentstudio/decent-news-distributor"
     depends_on:
       - rabbitmq
     env_file:
